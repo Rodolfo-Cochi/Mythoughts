@@ -1,30 +1,32 @@
-from Estudo.Classes.Calculos import *
+from Estudo.Python.Classes.Calculos import *
 
 try:
-    Num1 = float(input("informe o primeiro valor: "))
-    Num2 = float(input("Informe o segundo valor: "))
+    Num1 = float(input("Digite o numero: "))
+    Num2 = float(input("Digite o numero: "))
+    c = Calculos()
     Operacao = input("O que deseja fazer (+; -; /; *)")
 except print("Eh obrigatorio os valores"):
     pass 
 
+
 if Operacao == "+":
-    resultado = Calculos.somar(Num1, Num2)
+    resultado = c.somar(Num1,Num2)
     print (resultado)
 
 elif Operacao == "-":
-    resultado = Calculos.subtrair(Num1, Num2)
+    resultado = c.subtrair(Num1, Num2)
     print(resultado)
 
 elif Operacao == "*":
-    resultado = Calculos.multiplicar(Num1, Num2)
+    resultado = c.multiplicar(Num1, Num2)
     print(resultado)
 
 elif Operacao == "/":
-    resultado = Calculos.dividir(Num1,Num2)
+    resultado = c.dividir(Num1,Num2)
     print(resultado)
 
 elif Operacao == "^":
-    resultado = Calculos.elevar(Num1,Num2)
+    resultado = c.elevar(Num1,Num2)
     print(resultado)
 
 else:

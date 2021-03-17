@@ -1,10 +1,3 @@
-def calculo_de_pagamento(horas, valor_hora):    #Funcao q calcula o salario do funcionario
-    if horas <= 40:
-        salario = horas*valor_hora
-    else:
-        salario = horas*(1.5*valor_hora)
-    return salario
-
 def comparacao_salarios(funcionario1,funcionario2):     #Funcao que compara o salario de dois funcionarios
     if qnt_ganha(funcionario1) > qnt_ganha(funcionario2):
         return funcionario1
