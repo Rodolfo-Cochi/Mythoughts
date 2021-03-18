@@ -1,35 +1,33 @@
 import sqlite3
 class Conexao:
-    def __init__(self):
-        self
+    banco = sqlite3.connect("bancoTeste.db")               # Conectar com o DB                      
+    cursor = banco.cursor()
 
-    def connect(nome):
-        banco = sqlite3.connect(nome +".db")               # Conectar com o DB                      
-        return banco
-
-    def criarCursor(banco):
-        cursor = banco.cursor()       # Possibilita manipulacao do banco
-        return cursor
-
-    
+    def criarNaTabela(cursor,nome):
+        cursor.execute("CREATE TABLE "+nome+" (nome text,nota integer)")         # Criar Banco de Dados
 
 
+    #Funcionando INSERT
+    def addTabela(banco,cursor,nomeTabela,nomeJogo,nota): 
+        cursor.execute("INSERT INTO "+nomeTabela+" VALUES('"+nomeJogo+"','"+str(nota)+"')")  # Inserir Dados no Banco
+        banco.commit()             # Confirmar a Insercao no Banco
 
+    #Funcionando SELECT
+    def selecionarDados(cursor,nomeTabela):
+        cursor.execute(f"SELECT * from {nomeTabela}")      # Selecionar Dados do Banco 
+        print(cursor.fetchall())    # Printar oq foi selecionado
 
-    
-# cursor.execute("CREATE TABLE jogos (nome text,nota integer)")         # Criar Banco de Dados
+    #Funcionando DELETE
+    def deletarDados(cursor,banco,nomeTabela):
+        cursor.execute(f"DELETE from {nomeTabela}")   # Deletar conteudo do banco 
+        banco.commit()      # Confirmar o Comando SQL no Banco
 
+    #Funcionando UPDATE
+    def alterarNome(cursor,banco,nomeTabela,novoJogo,antigoJogo):
+        cursor.execute(f"UPDATE {nomeTabela} SET nome = '{novoJogo}' WHERE nome = '{antigoJogo}'") # Digitar Nome novo e de onde deseja
+        banco.commit()  # Confirmar comando SQL no Banco
 
-
-#cursor.execute("INSERT INTO jogos VALUES('"+nomeJogo+"',"+str(nota)+")")     # Inserir Dados no Banco
-#banco.commit()  # Confirmar a Insercao no Banco
-
-#cursor.execute("SELECT * from jogos WHERE nota >= 8")   # Selecionar Dados do Banco 
-#print(cursor.fetchall()) # Printar oq foi selecionado 
-
-#cursor.execute("DELETE from jogos")   # Deletar conteudo do banco 
-#banco.commit()  # Confirmar o Comando SQL no Banco
-
-#cursor.execute("SELECT * from jogos")   # Selecionar Dados do Banco 
-#print(cursor.fetchall())    # Printar Selecionado
+    # Testando 
+    def alterarNotaDoJogo(cursor,banco,nomeTabela,nomeJogo,novaNota):
+        cursor.execute(f"UPDATE {nomeTabela} SET nome = '{novoJogo}' WHERE nome = '{antigoJogo}'")
 
