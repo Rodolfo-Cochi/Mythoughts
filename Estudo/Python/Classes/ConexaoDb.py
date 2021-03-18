@@ -24,10 +24,11 @@ class Conexao:
 
     #Funcionando UPDATE
     def alterarNome(cursor,banco,nomeTabela,novoJogo,antigoJogo):
-        cursor.execute(f"UPDATE {nomeTabela} SET nome = '{novoJogo}' WHERE nome = '{antigoJogo}'") # Digitar Nome novo e de onde deseja
+        cursor.execute(f"UPDATE {nomeTabela} SET nome = '{novoJogo}' WHERE nome = '{antigoJogo}'") # Digitar Nome novo e de quem deseja trocar 
         banco.commit()  # Confirmar comando SQL no Banco
 
-    # Testando 
+    # Funcionando UPDATE de notas
     def alterarNotaDoJogo(cursor,banco,nomeTabela,nomeJogo,novaNota):
-        cursor.execute(f"UPDATE {nomeTabela} SET nome = '{novoJogo}' WHERE nome = '{antigoJogo}'")
+        cursor.execute(f"UPDATE {nomeTabela} SET nota = '{novaNota}' WHERE nome = '{nomeJogo}'") # Digitar o jogo que deseja trocar a nota e qual a nova nota
+        banco.commit()
 

@@ -19,6 +19,9 @@ Conexao.selecionarDados(cr,nomeTabela)  # selecionar e mostrar os dados selecion
 Conexao.alterarNome(cr,db,nomeTabela,nomeJogoNovo,nomeJogo) # Alterar nome de algum jogo no Db
 Conexao.selecionarDados(cr,nomeTabela) # selecionar e mostrar os dados selecionado do Db
 
+Conexao.alterarNotaDoJogo(cr,db,nomeTabela,nomeJogo,novaNota=5) # Aterar nota de algum jogo
+Conexao.selecionarDados(cr,nomeTabela) # selecionar e mostrar os dados selecionado do Db
+
 Conexao.deletarDados(cr,db,nomeTabela) # Deletar a tabela inteira (Por enquanto)
 Conexao.selecionarDados(cr,nomeTabela) # selecionar e mostrar os dados selecionado do Db
 
