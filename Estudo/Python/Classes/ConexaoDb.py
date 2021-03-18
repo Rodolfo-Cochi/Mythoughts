@@ -3,7 +3,7 @@ class Conexao:
     banco = sqlite3.connect("bancoTeste.db")               # Conectar com o DB                      
     cursor = banco.cursor()
 
-    def criarNaTabela(cursor,nome):
+    def criarTabela(cursor,nome):
         cursor.execute("CREATE TABLE "+nome+" (nome text,nota integer)")         # Criar Banco de Dados
 
 

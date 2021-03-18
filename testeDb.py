@@ -7,12 +7,17 @@ from Estudo.Python.Classes.ConexaoDb import *
 db = Conexao.banco
 cr = Conexao.cursor
 
+# Variaveis de teste
 nomeTabela = "jogos"
 nomeJogo = "RE"
 nomeJogoNovo = "DMC"
 nota = 8
 
-Conexao.criarNaTabela(cr,nomeTabela)    # Criar o Db
+try:
+    Conexao.criarTabela(cr,nomeTabela)    #Criar o Db
+except:
+    print("Algo deu errado")
+
 Conexao.addTabela(db,cr,nomeTabela,nomeJogo,nota)  # Adcionar jogo na tabela
 Conexao.selecionarDados(cr,nomeTabela)  # selecionar e mostrar os dados selecionado do Db
 
