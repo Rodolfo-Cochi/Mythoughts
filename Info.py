@@ -49,15 +49,18 @@ efetivados = ["Alexandre", "Fernando"]                  #Criar lista de efetivad
 estagiario = "estagiario"                               #usar em add na lista de Estagiario
 efetivado = "efetivado"                                 #usar para add na lista deEfetivado
 errado = "nada"                                         #teste para erro
-func_salario = {}                                       #Criar dicionario
+func_salario = {'Julia':10, 'Lucia':15}                                       #Criar dicionario
 func_interesse = "Thiago"                               #Funcionario de interesse
 
 
-addLista(input("Cargo: "), input("Nome: "))             #Teste de tratamento de erro
-print(addDic(func_interesse))
-print(estagiarios)
-print(efetivados)
+def __init__(self):
+    self
 
+def acessar_nome(nome):
+    print(func_salario[nome])
+
+
+acessar_nome("Julia")
 
 
 
