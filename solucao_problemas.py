@@ -15,7 +15,7 @@ def teste_fluxo():
         vetor = ArrayFluxo
 
     for i in range(len(vetor)):
-        if vetor[i].data == json['fluxo'][i]['data']:
+        if (vetor[i].data == json['fluxo'][i]['data']) and (vetor[i].valor == json['fluxo'][i]['valor']):
             return True
         else:
             return False
